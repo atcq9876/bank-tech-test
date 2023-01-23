@@ -66,9 +66,10 @@ Functions:
 
 # Tests
 - depositFunds(amountDeposited, date)
-    - a valid deposit, then printBankStatement to check deposit amount and balance
-    - a different valid deposit, then printBankStatement to check deposit amount and balance
-    - two valid deposits, then printBankStatement to check deposit amounts and balance
+    ~~- a valid deposit, then printBankStatement to check deposit amount and balance~~
+    ~~- a different valid deposit, then printBankStatement to check deposit amount and balance~~
+    ~~- two valid deposits, then printBankStatement to check deposit amounts and balance~~
+    ~~- valid deposit with different date~~
     - (refactor)
     - throw error: invalid date (incorrect format)
     - throw error: invalid date (date is before the date of the previous transaction)
