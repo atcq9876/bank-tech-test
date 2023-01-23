@@ -71,7 +71,7 @@ Functions:
     ~~- two valid deposits, then printBankStatement to check deposit amounts and balance~~
     ~~- valid deposit with different date~~
     ~~- (refactor)~~
-    - throw error: invalid date (incorrect format)
+    ~~- throw error: invalid date (incorrect format)~~
     ~~- throw error: invalid date (date is before the date of the previous transaction)~~
     ~~- throw error: invalid date (incorrect data type)~~
         ~~- number~~
