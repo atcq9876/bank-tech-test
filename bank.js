@@ -1,7 +1,7 @@
 class BankAccount { 
   constructor() {
-    this.balance = 0
-    this.statement = 'date || credit || debit || balance'
+    this.balance = 0;
+    this.statement = 'date || credit || debit || balance';
   }
   
   depositFunds(date, amountDeposited) {
@@ -10,7 +10,7 @@ class BankAccount {
   }
 
   printStatement() {
-    return this.statement
+    return this.statement;
   }
 }
 
