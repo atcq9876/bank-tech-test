@@ -115,3 +115,6 @@ Functions:
     - a deposit, a withdrawal, another deposit, another withdrawal, then printBankStatement
     - deposit, withdrawal, printBankStatement, deposit, withdrawal, printBankStatement again
     - etc.
+
+- additional test
+    - check if amount deposited/withdrawn is a number to 2dp, e.g., 20.1 or 20.121 would throw an error
