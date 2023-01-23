@@ -6,7 +6,7 @@ class BankAccount {
   
   depositFunds(date, amountDeposited) {
     this.balance += amountDeposited;
-    this.statement += `\n01/01/2023 || ${amountDeposited.toFixed(2)} || || ${this.balance.toFixed(2)}`;
+    this.statement += `\n${date} || ${amountDeposited.toFixed(2)} || || ${this.balance.toFixed(2)}`;
   }
 
   printStatement() {
