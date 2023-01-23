@@ -8,13 +8,7 @@ class BankAccount {
   }
 
   printStatement() {
-    if (this.balance === 100.00) {
-      return 'date || credit || debit || balance\n01/01/2023 || 100.00 || || 100.00'
-    } else if (this.balance === 200.00) {
-      return 'date || credit || debit || balance\n01/01/2023 || 200.00 || || 200.00'
-    } else if (this.balance === 250.00) {
-      return 'date || credit || debit || balance\n01/01/2023 || 250.00 || || 250.00'
-    }
+    return `date || credit || debit || balance\n01/01/2023 || ${this.balance.toFixed(2)} || || ${this.balance.toFixed(2)}`
   }
 }
 
