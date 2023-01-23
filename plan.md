@@ -70,15 +70,15 @@ Functions:
     ~~- a different valid deposit, then printBankStatement to check deposit amount and balance~~
     ~~- two valid deposits, then printBankStatement to check deposit amounts and balance~~
     ~~- valid deposit with different date~~
-    - (refactor)
+    ~~- (refactor)~~
     - throw error: invalid date (incorrect format)
     - throw error: invalid date (date is before the date of the previous transaction)
     - throw error: invalid date (incorrect data type)
         - number
         - nil/null
     - (refactor)
-    - throw error: invalid deposit (amount is negative)
-    - throw error: invalid deposit (amount is 0)
+    ~~- throw error: invalid deposit (amount is negative)~~
+    ~~- throw error: invalid deposit (amount is 0)~~
     - (refactor)
     - throw error: invalid deposit (amount is not a 2dp float)
         - int

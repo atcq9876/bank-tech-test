@@ -6,6 +6,7 @@ class BankAccount {
   
   depositFunds(date, amountDeposited) {
     if (amountDeposited <= 0) throw new Error('Only positive amounts to 2 decimal places can be deposited');
+    if (amountDeposited === undefined) throw new Error('Please enter a number to two decimal places for the amount deposited');
     this.balance += amountDeposited;
     this.statement += `\n${date} || ${amountDeposited.toFixed(2)} || || ${this.balance.toFixed(2)}`;
   }

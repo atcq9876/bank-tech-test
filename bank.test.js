@@ -57,4 +57,12 @@ describe('BankAccount', () => {
       bankAccount.depositFunds('03/01/2023', 0);
     }).toThrow('Only positive amounts to 2 decimal places can be deposited');
   });
+
+  test('throws an error when amountDeposited is not given as argument', () => {
+    const bankAccount = new BankAccount();
+    
+    expect(() => {
+      bankAccount.depositFunds('03/01/2023');
+    }).toThrow('Please enter a number to two decimal places for the amount deposited');
+  });
 })
