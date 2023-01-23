@@ -88,8 +88,8 @@ Functions:
     ~~- (refactor)~~
 
 - withdrawFunds(amountWithdrawn, date)
-    - deposit funds, then a valid withdrawal, then printBankStatement to check deposit and withdrawal amounts and balance
-    - deposit funds, then a a different valid withdrawal, then printBankStatement to check deposit and withdrawal amounts and balance
+    ~~- deposit funds, then a valid withdrawal, then printBankStatement to check deposit and withdrawal amounts and balance~~
+    ~~- deposit funds, then a a different valid withdrawal, then printBankStatement to check deposit and withdrawal amounts and balance~~
     - deposit funds, then two valid withdrawals, then printBankStatement to check deposit and withdrawal amounts and balance
     - (refactor)
     - throw error: if trying to withdraw but account contains no funds
