@@ -7,6 +7,8 @@ class BankAccount {
   
   depositFunds(date, amountDeposited) {
     if (typeof date !== 'string') throw new Error('Please enter the date as a string, in the format DD/MM/YYYY');
+    const dateFormat = /^(0?[1-9]|[1-2][0-9]|3[01])[\/](0?[1-9]|1[0-2])/;
+    if (!date.match(dateFormat)) throw new Error('Dates must be in the format DD/MM/YYYY')
     if (date < this.previousTransactionDate) throw new Error(`You cannot enter a date that is earlier than the previous transaction's`);
     if (typeof amountDeposited !== 'number') throw new Error('Please enter a number to two decimal places for the amount deposited');
     if (amountDeposited <= 0) throw new Error('Only positive amounts to 2 decimal places can be deposited');

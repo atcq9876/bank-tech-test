@@ -98,4 +98,12 @@ describe('BankAccount', () => {
       bankAccount.depositFunds('01/01/2023', 150.00);
     }).toThrow(`You cannot enter a date that is earlier than the previous transaction's`);
   });
+
+  test('throws an error when date is not the correct format (DD/MM/YYYY)', () => {
+    const bankAccount = new BankAccount();
+    
+    expect(() => {
+      bankAccount.depositFunds('01-01-2023', 150.00);
+    }).toThrow('Dates must be in the format DD/MM/YYYY');
+  });
 })
