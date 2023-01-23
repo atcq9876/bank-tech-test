@@ -41,4 +41,12 @@ describe('BankAccount', () => {
     expect(bankAccount.printStatement())
     .toEqual('date || credit || debit || balance\n02/01/2023 || 300.00 || || 300.00');
   })
+
+  test('throws an error when amountDeposited is < 0', () => {
+    const bankAccount = new BankAccount();
+    
+    expect(() => {
+      bankAccount.depositFunds('03/01/2023', -10.00);
+    }).toThrow('Only positive amounts to 2 decimal places can be deposited');
+  });
 })
