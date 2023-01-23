@@ -40,13 +40,13 @@ Functions:
 
 - depositFunds(date, amountDeposited)
     - check for date errors (data types, is correct format, date is after previous date, etc.)
-    - check for amountDeposited errors (data types, positive number, etc.)
+    - check for amountDeposited errors (data types, positive 2dp float, etc.)
     - this.balance += amountDeposited
     - this.transactions.push([date], [amountDeposited], [this.balance])
 
 - withdrawFunds(date, amountWithdrawn)
     - check for date errors (data types, is correct format, date is after previous date, etc.)
-    - check for amountWithdrawn errors (data types, positive number, etc.)
+    - check for amountWithdrawn errors (data types, positive 2dp float, etc.)
     - this.balance -= amountWithdrawn
     - this.transactions.push([date] [amountWithdrawn], [this.balance])
 
@@ -65,9 +65,6 @@ Functions:
 
 
 # Tests
-- printBankStatement()
-    - before any deposits or withdrawals (i.e., empty statement)
-
 - depositFunds(amountDeposited, date)
     - a valid deposit, then printBankStatement to check deposit amount and balance
     - a different valid deposit, then printBankStatement to check deposit amount and balance
@@ -82,7 +79,9 @@ Functions:
     - throw error: invalid deposit (amount is negative)
     - throw error: invalid deposit (amount is 0)
     - (refactor)
-    - throw error: invalid deposit (amount is not a number/int)
+    - throw error: invalid deposit (amount is not a 2dp float)
+        - int
+        - several dp floatr
         - string
         - nil/null
     - (refactor)
@@ -103,10 +102,13 @@ Functions:
     - throw error: invalid withdrawal (amount is negative)
     - throw error: invalid withdrawal (amount is 0)
     - (refactor)
-    - throw error: invalid withdrawal (amount is not a number/int)
-        - string
-        - nil/null
+    - throw error: invalid withdrawal (amount is not a 2dp float)
+        - int
+        - several dp floatr
     - (refactor)
+
+- printBankStatement()
+    - (throw error?) before any deposits or withdrawals (i.e., empty statement)
 
 - all features
     - a deposit, a withdrawal, another deposit, another withdrawal, then printBankStatement
