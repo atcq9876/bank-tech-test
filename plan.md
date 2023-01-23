@@ -73,9 +73,9 @@ Functions:
     ~~- (refactor)~~
     - throw error: invalid date (incorrect format)
     - throw error: invalid date (date is before the date of the previous transaction)
-    - throw error: invalid date (incorrect data type)
-        - number
-        - nil/null
+    ~~- throw error: invalid date (incorrect data type)~~
+        ~~- number~~
+        ~~- nil/null~~
     - (refactor)
     ~~- throw error: invalid deposit (amount is negative)~~
     ~~- throw error: invalid deposit (amount is 0)~~

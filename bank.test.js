@@ -86,7 +86,7 @@ describe('BankAccount', () => {
     const bankAccount = new BankAccount();
     
     expect(() => {
-      bankAccount.depositFunds(13012023, '100.00');
+      bankAccount.depositFunds(13012023, 100.00);
     }).toThrow('Please enter the date as a string, in the format DD/MM/YYYY');
   });
 })
