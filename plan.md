@@ -12,7 +12,36 @@
 - When she prints her bank statement
 - Then she would see:
 
+date || credit || debit || balance
+14/01/2023 || || 500.00 || 2500.00
+13/01/2023 || 2000.00 || || 3000.00
+10/01/2023 || 1000.00 || || 1000.00
+
+(displayed more clearly below)
 date        || credit   || debit    || balance
 14/01/2023  ||          || 500.00   || 2500.00
 13/01/2023  || 2000.00  ||          || 3000.00
 10/01/2023  || 1000.00  ||          || 1000.00
+
+
+# Plan
+either pass date as an argument to deposit and withdraw functions or require a date/time library and use current date
+
+Class:
+- BankAccount
+
+Functions:
+- Constructor
+    - this.balance = 0
+    - this.statement = "date || credit || debit || balance"
+
+- DepositFunds(amountDeposited, date)
+    - this.balance += amountDeposited
+    - this.statement += `\n ${date} || ${amountDeposited} || || ${this.balance}`
+
+- WithdrawFunds(amountWithdrawn, date)
+    - this.balance -= amountWithdrawn
+    - this.statement += `\n ${date} || || ${amountWithdrawn} || ${this.balance}`
+
+- PrintBankStatement()
+    - return this.statement
