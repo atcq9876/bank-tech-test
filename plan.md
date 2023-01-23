@@ -120,6 +120,7 @@ Functions:
     - check if amount deposited/withdrawn is a number to 2dp, e.g., 20.1 or 20.121 would throw an error
 
 
-# Additional refactoring
+# Additional todos
 - Make sure lines are all within character limit
 - Add any necessary comments (none if it's clear what all code does)
+- Write README.md
