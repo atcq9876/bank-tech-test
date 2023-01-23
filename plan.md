@@ -24,24 +24,47 @@ date        || credit   || debit    || balance
 10/01/2023  || 1000.00  ||          || 1000.00
 
 
-# Plan
-either pass date as an argument to deposit and withdraw functions or require a date/time library and use current date
+# Assumptions
+- Given that the acceptance criteria's example does not have more than one transaction per day, and that time is not included as a variable, this program will assume that there will be a maximum of one transaction per day in order to avoid problems related to sorting (e.g., if a withdrawal and deposit happen on the same day, but it is not clear which happened first, then carrying out the withdrawal first could result in an insufficient funds error).
 
+
+# Plan
 Class:
 - BankAccount
 
 Functions:
-- Constructor
-    - this.balance = 0
-    - this.statement = "date || credit || debit || balance"
+- constructor
+    - this.transactions = []
+    - this.statement = []
 
-- DepositFunds(amountDeposited, date)
-    - this.balance += amountDeposited
-    - this.statement += `\n ${date} || ${amountDeposited} || || ${this.balance}`
+- depositFunds(date, amountDeposited)
+    - check for errors
+    - this.transactions.push([date], [amountDeposited])
 
-- WithdrawFunds(amountWithdrawn, date)
-    - this.balance -= amountWithdrawn
-    - this.statement += `\n ${date} || || ${amountWithdrawn} || ${this.balance}`
+- withdrawFunds(date, amountWithdrawn)
+    - check for errors
+    - this.transactions.push([date] [amountWithdrawn])
 
-- PrintBankStatement()
+- printBankStatement()
+    - createStatement()
     - return this.statement
+
+- #createStatement()
+    - sortTransactionsByDate()
+    - calculateBalances()
+    - formatTransactions()
+    - formatStatement()
+    - return this.statement
+
+- #sortTransactionsByDate()
+  - this.statement = sort this.transactions by date (might need to change date format to yyyy/mm/dd temporarily to do this)
+
+- #calculateBalances()
+  - this.statement = map through this.statement, calculating balances for each transaction, push this balance to each sub-array
+
+- #formatTransactions()
+  - this.statement = map through sorted transactions; within iteration: add '\n' and '||' formatting;
+  - this.statement.join (join the formatted array into a string)
+
+- #formatStatement()
+  - this.statement = "date || credit || debit || balance" + this.statement;
