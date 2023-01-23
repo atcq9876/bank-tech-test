@@ -106,4 +106,12 @@ describe('BankAccount', () => {
       bankAccount.depositFunds('01-01-2023', 150.00);
     }).toThrow('Dates must be in the format DD/MM/YYYY');
   });
+
+  it('prints a statement after one valid withdrawal', () => {
+    const bankAccount = new BankAccount();
+    bankAccount.depositFunds('03/01/2023', 200.00);
+    bankAccount.withdrawFunds('04/01/2023', 100.00);
+
+    expect(bankAccount.printStatement()).toEqual('date || credit || debit || balance\n03/01/2023 || 200.00 || || 200.00\n04/01/2023 || || 100.00 || 100.00');
+  })
 })

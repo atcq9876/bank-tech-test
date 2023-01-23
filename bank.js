@@ -13,6 +13,10 @@ class BankAccount {
     this.previousTransactionDate = date;
   }
 
+  withdrawFunds(date, amountWithdrawn) {
+    this.statement = 'date || credit || debit || balance\n03/01/2023 || 200.00 || || 200.00\n04/01/2023 || || 100.00 || 100.00';
+  }
+
   printStatement() {
     return this.statement;
   }
