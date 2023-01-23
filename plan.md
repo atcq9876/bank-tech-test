@@ -76,7 +76,7 @@ Functions:
     ~~- throw error: invalid date (incorrect data type)~~
         ~~- number~~
         ~~- nil/null~~
-    - (refactor)
+    ~~- (refactor)~~
     ~~- throw error: invalid deposit (amount is negative)~~
     ~~- throw error: invalid deposit (amount is 0)~~
     ~~- (refactor)~~
