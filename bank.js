@@ -5,6 +5,7 @@ class BankAccount {
   }
   
   depositFunds(date, amountDeposited) {
+    if (typeof date !== 'string') throw new Error('Please enter the date as a string, in the format DD/MM/YYYY');
     if (typeof amountDeposited !== 'number') throw new Error('Please enter a number to two decimal places for the amount deposited');
     if (amountDeposited <= 0) throw new Error('Only positive amounts to 2 decimal places can be deposited');
     this.balance += amountDeposited;

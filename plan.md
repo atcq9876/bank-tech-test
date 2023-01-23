@@ -79,13 +79,13 @@ Functions:
     - (refactor)
     ~~- throw error: invalid deposit (amount is negative)~~
     ~~- throw error: invalid deposit (amount is 0)~~
-    - (refactor)
-    - throw error: invalid deposit (amount is not a 2dp float)
-        - int
-        - several dp floatr
-        - string
-        - nil/null
-    - (refactor)
+    ~~- (refactor)~~
+    ~~- throw error: invalid deposit (amount is not a 2dp float)~~
+        ~~- int~~
+        ~~- several dp floatr~~
+        ~~- string~~
+        ~~- nil/null~~
+    ~~- (refactor)~~
 
 - withdrawFunds(amountWithdrawn, date)
     - deposit funds, then a valid withdrawal, then printBankStatement to check deposit and withdrawal amounts and balance

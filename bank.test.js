@@ -81,4 +81,12 @@ describe('BankAccount', () => {
       bankAccount.depositFunds('03/01/2023', '100.00');
     }).toThrow('Please enter a number to two decimal places for the amount deposited');
   });
+
+  test('throws an error when date is not a string', () => {
+    const bankAccount = new BankAccount();
+    
+    expect(() => {
+      bankAccount.depositFunds(13012023, '100.00');
+    }).toThrow('Please enter the date as a string, in the format DD/MM/YYYY');
+  });
 })
