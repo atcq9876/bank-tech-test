@@ -14,6 +14,8 @@ class BankAccount {
   }
 
   withdrawFunds(date, amountWithdrawn) {
+    // reminder to use #checkDate again for date validation
+    // reminder to make a #checkAmountWithdrawn method for amountWithdrawn validation
     this.balance -= amountWithdrawn;  
     this.statement = `date || credit || debit || balance\n03/01/2023 || 200.00 || || 200.00\n04/01/2023 || || ${amountWithdrawn.toFixed(2)} || ${this.balance.toFixed(2)}`;
   }
