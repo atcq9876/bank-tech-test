@@ -64,3 +64,51 @@ Functions:
     - this.statement = "date || credit || debit || balance" + this.statement
 
 
+# Tests
+- printBankStatement()
+    - before any deposits or withdrawals (i.e., empty statement)
+
+- depositFunds(amountDeposited, date)
+    - a valid deposit, then printBankStatement to check deposit amount and balance
+    - a different valid deposit, then printBankStatement to check deposit amount and balance
+    - two valid deposits, then printBankStatement to check deposit amounts and balance
+    - (refactor)
+    - throw error: invalid date (incorrect format)
+    - throw error: invalid date (date is before the date of the previous transaction)
+    - throw error: invalid date (incorrect data type)
+        - number
+        - nil/null
+    - (refactor)
+    - throw error: invalid deposit (amount is negative)
+    - throw error: invalid deposit (amount is 0)
+    - (refactor)
+    - throw error: invalid deposit (amount is not a number/int)
+        - string
+        - nil/null
+    - (refactor)
+
+- withdrawFunds(amountWithdrawn, date)
+    - deposit funds, then a valid withdrawal, then printBankStatement to check deposit and withdrawal amounts and balance
+    - deposit funds, then a a different valid withdrawal, then printBankStatement to check deposit and withdrawal amounts and balance
+    - deposit funds, then two valid withdrawals, then printBankStatement to check deposit and withdrawal amounts and balance
+    - (refactor)
+    - throw error: if trying to withdraw but account contains no funds
+    - throw error: if trying to withdraw more than the balance (balance > 0)
+    - (refactor)
+    - throw error: invalid date (incorrect format)
+    - throw error: invalid date (date is before the date of the previous transaction)
+    - throw error: invalid date (incorrect data type)
+        - number
+        - nil/null
+    - throw error: invalid withdrawal (amount is negative)
+    - throw error: invalid withdrawal (amount is 0)
+    - (refactor)
+    - throw error: invalid withdrawal (amount is not a number/int)
+        - string
+        - nil/null
+    - (refactor)
+
+- all features
+    - a deposit, a withdrawal, another deposit, another withdrawal, then printBankStatement
+    - deposit, withdrawal, printBankStatement, deposit, withdrawal, printBankStatement again
+    - etc.
