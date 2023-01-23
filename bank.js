@@ -14,11 +14,8 @@ class BankAccount {
   }
 
   withdrawFunds(date, amountWithdrawn) {
-    if (amountWithdrawn === 100.00) {
-      this.statement = 'date || credit || debit || balance\n03/01/2023 || 200.00 || || 200.00\n04/01/2023 || || 100.00 || 100.00';
-    } else if (amountWithdrawn === 150.00) {
-      this.statement = 'date || credit || debit || balance\n03/01/2023 || 200.00 || || 200.00\n04/01/2023 || || 150.00 || 50.00';
-    }
+    this.balance -= amountWithdrawn;  
+    this.statement = `date || credit || debit || balance\n03/01/2023 || 200.00 || || 200.00\n04/01/2023 || || ${amountWithdrawn.toFixed(2)} || ${this.balance.toFixed(2)}`;
   }
 
   printStatement() {
