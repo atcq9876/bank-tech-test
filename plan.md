@@ -95,9 +95,9 @@ Functions:
     ~~- throw error: if trying to withdraw but account contains no funds~~
     ~~- throw error: if trying to withdraw more than the balance (balance > 0)~~
     ~~- (refactor)~~
-    - throw error: invalid withdrawal (amount is negative)
-    - throw error: invalid withdrawal (amount is 0)
-    - (refactor)
+    ~~- throw error: invalid withdrawal (amount is negative)~~
+    ~~- throw error: invalid withdrawal (amount is 0)~~
+    ~~- (refactor)~~
     - throw error: invalid withdrawal (amount is not a 2dp float)
         - int
         - several dp float
