@@ -44,7 +44,7 @@ I began by drafting a BankAccount class and breaking it down into three main fun
 2. Run ```node```.
 3. Import the BankAccount class: ```const BankAccount = require('./bankAccount')```.
 4. Create an instance of the class, e.g.: ```const account = new BankAccount();```.
-5. Run any/all of the three public functions on the class instance: depositFunds, withdrawFunds, printStatement.
+5. Run any/all of the three public functions on the class instance: depositFunds, withdrawFunds, printStatement (details below):
 - depositFunds(date, amountDeposited), e.g.: ```account.depositFunds('01/01/2023', 100.00);```. Please note that: the date must be a string in the format DD/MM/YYYY; you cannot make the transaction date earlier than the preceding transaction date; and amountDeposited must be a positive number.
 - withdrawFunds(date, amountWithdrawn), e.g.: ```account.withdrawFunds('02/01/2023', 50.00);```. Again, please note that: the date must be a string in the format DD/MM/YYYY; you cannot make the transaction date earlier than the preceding transaction date; and amountWithdrawn must be a positive number.
 - printStatement(), e.g.: ```account.printStatement();```
