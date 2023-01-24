@@ -220,4 +220,10 @@ describe('BankAccount', () => {
       bankAccount.withdrawFunds('07.01.2023', 150.00);
     }).toThrow('Dates must be in the format DD/MM/YYYY');
   });
+
+  it('prints a message saying the balance is 0 if no transactions have taken place', () => {
+    const bankAccount = new BankAccount();
+    
+    expect(bankAccount.printStatement()).toEqual('Current balance is 0, no transactions have taken place');
+  })
 })
