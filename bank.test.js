@@ -47,7 +47,7 @@ describe('BankAccount', () => {
     
     expect(() => {
       bankAccount.depositFunds('03/01/2023', -10.00);
-    }).toThrow('Only positive amounts to 2 decimal places can be deposited');
+    }).toThrow('Only positive amounts can be deposited');
   });
 
   test('throws an error when amountDeposited is 0', () => {
@@ -55,7 +55,7 @@ describe('BankAccount', () => {
     
     expect(() => {
       bankAccount.depositFunds('03/01/2023', 0);
-    }).toThrow('Only positive amounts to 2 decimal places can be deposited');
+    }).toThrow('Only positive amounts can be deposited');
   });
 
   test('throws an error when amountDeposited is not given as argument', () => {
@@ -145,7 +145,7 @@ describe('BankAccount', () => {
 
     expect(() => {
       bankAccount.withdrawFunds('04/01/2023', 50.00);
-    }).toThrow('Current balance is 0.00, withdrawals must not exceed the balance');
+    }).toThrow('Current balance is 0.00, withdrawals must not exceed this amount');
   })
 
   test('throws error when account balance is less than withdrawal amount (but not 0)', () => {
@@ -154,7 +154,7 @@ describe('BankAccount', () => {
 
     expect(() => {
       bankAccount.withdrawFunds('05/01/2023', 100.00);
-    }).toThrow('Current balance is 50.00, withdrawals must not exceed the balance');
+    }).toThrow('Current balance is 50.00, withdrawals must not exceed this amount');
   })
 
   test('throws error if withdrawing an amount that is negative', () => {
@@ -163,7 +163,7 @@ describe('BankAccount', () => {
 
     expect(() => {
       bankAccount.withdrawFunds('05/01/23', -10.00);
-    }).toThrow('Only positive amounts to 2 decimal places can be withdrawn')
+    }).toThrow('Only positive amounts can be withdrawn')
   })
 
   test('throws error if withdrawing 0', () => {
@@ -172,7 +172,7 @@ describe('BankAccount', () => {
 
     expect(() => {
       bankAccount.withdrawFunds('05/01/23', 0.00);
-    }).toThrow('Only positive amounts to 2 decimal places can be withdrawn')
+    }).toThrow('Only positive amounts can be withdrawn')
   })
 
   test('throws error if withdawal amount is not a number', () => {

@@ -38,13 +38,13 @@ class BankAccount {
 
   #checkAmountDeposited(amountDeposited) {
     if (typeof amountDeposited !== 'number') throw new Error('Please enter a number to two decimal places for the amount deposited');
-    if (amountDeposited <= 0) throw new Error('Only positive amounts to 2 decimal places can be deposited');
+    if (amountDeposited <= 0) throw new Error('Only positive amounts can be deposited');
   }
 
   #checkAmountWithdrawn(amountWithdrawn) {
     if (typeof amountWithdrawn !== 'number') throw new Error('Please enter a number to two decimal places for the amount withdrawn');
-    if (amountWithdrawn <= 0) throw new Error('Only positive amounts to 2 decimal places can be withdrawn');
-    if (this.balance < amountWithdrawn) throw new Error(`Current balance is ${this.balance.toFixed(2)}, withdrawals must not exceed the balance`);
+    if (amountWithdrawn <= 0) throw new Error('Only positive amounts can be withdrawn');
+    if (this.balance < amountWithdrawn) throw new Error(`Current balance is ${this.balance.toFixed(2)}, withdrawals must not exceed this amount`);
   }
 
   #formatStatement() {
