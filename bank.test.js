@@ -90,7 +90,7 @@ describe('BankAccount', () => {
     }).toThrow('Please enter the date as a string, in the format DD/MM/YYYY');
   });
 
-  test('throws an error when date is not a string', () => {
+  test('throws an error when date is earlier than previous transaction', () => {
     const bankAccount = new BankAccount();
     bankAccount.depositFunds('02/01/2023', 100.00);
     
