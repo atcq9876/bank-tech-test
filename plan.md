@@ -95,21 +95,21 @@ Functions:
     ~~- throw error: if trying to withdraw but account contains no funds~~
     ~~- throw error: if trying to withdraw more than the balance (balance > 0)~~
     ~~- (refactor)~~
-    - throw error: invalid date (incorrect format)
-    - throw error: invalid date (date is before the date of the previous transaction)
-    - throw error: invalid date (incorrect data type)
-        - number
-        - nil/null
     - throw error: invalid withdrawal (amount is negative)
     - throw error: invalid withdrawal (amount is 0)
     - (refactor)
     - throw error: invalid withdrawal (amount is not a 2dp float)
         - int
-        - several dp floatr
+        - several dp float
     - (refactor)
+    - throw error: invalid date (incorrect format)
+    - throw error: invalid date (date is before the date of the previous transaction)
+    - throw error: invalid date (incorrect data type)
+        - number
+        - nil/null
 
 - printBankStatement()
-    - (throw error?) before any deposits or withdrawals (i.e., empty statement)
+    - (throw error / print a message saying 0 balance) before any deposits or withdrawals (i.e., empty statement)
 
 - all features
     - a deposit, a withdrawal, another deposit, another withdrawal, then printBankStatement
