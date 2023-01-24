@@ -10,7 +10,9 @@ class BankAccount {
     this.#checkDateIsValid(date);
     this.#checkAmountDepositedIsValid(amountDeposited);
     this.balance += amountDeposited;
-    this.transactions = `\n${date} || ${amountDeposited.toFixed(2)} || || ${this.balance.toFixed(2)}` + this.transactions;
+    this.transactions =
+      `\n${date} || ${amountDeposited.toFixed(2)} || || ${this.balance.toFixed(2)}`
+      + this.transactions;
     this.previousTransactionDate = date;
   }
 
@@ -18,7 +20,9 @@ class BankAccount {
     this.#checkDateIsValid(date);
     this.#checkAmountWithdrawnIsValid(amountWithdrawn);
     this.balance -= amountWithdrawn;  
-    this.transactions = `\n${date} || || ${amountWithdrawn.toFixed(2)} || ${this.balance.toFixed(2)}` + this.transactions;
+    this.transactions =
+      `\n${date} || || ${amountWithdrawn.toFixed(2)} || ${this.balance.toFixed(2)}`
+      + this.transactions;
     this.previousTransactionDate = date;
   }
 
