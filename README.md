@@ -1,7 +1,7 @@
 # bank-tech-test
 
 ## About this project
-This is a tech-test assignment taken from week 10 of the Makers bootcamp. The program allows a user to add deposit and withdrawal transactions to a bank account, and print a statement of all transactions from this account. The full specification of this project is outlined below:
+This is a tech-test assignment taken from week 10 of the Makers bootcamp. The program made allows a user to add deposit and withdrawal transactions to a bank account, and print a statement of all transactions from this account. The full specification of this project is outlined below:
 
 ### Specification
 
@@ -29,8 +29,7 @@ date || credit || debit || balance
 
 ## Approach taken to solve the problem
 
-Describe how you approached designing your solution to the problem (mention plan.md doc).
-I began by drafting a BankAccount class and breaking it down into three main functions - depositFunds, withdrawFunds and printStatement - given that these encapsulate the main functionality outlined in the  specification. I then brainstormed how these functions could interact with each other and the constructor function of the class. I incrementally built up a draft of each of these functions in the plan.md document of this repo. Once I had completed a reasonably detailed draft, I moved onto writing a list of things that I would need to check for when test-driving the class and its functions, including edge cases. Once I was satisfied with this list, I began TDDing the program. During the process of writing the program, I identified several areas which could be refactored into smaller private functions, for example, for ensuring that the argument 'amountDeposited' in the function 'depositFunds' is valid.
+I began by drafting a BankAccount class and breaking it down into three main functions - depositFunds, withdrawFunds and printStatement - given that these encapsulate the main functionality outlined in the  specification. I then brainstormed how these functions could interact with each other and the constructor function of the class. I incrementally built up a draft of each of these functions in the plan.md document of this repo. Once I had completed a reasonably detailed draft, I moved onto writing a list of things that I would need to check for when test-driving the class and its functions, including edge cases. Once I was satisfied with this list, I began TDDing the program. During the process of writing the program, I identified several areas which could be refactored into smaller private functions, for example, for ensuring that the argument 'amountDeposited' in the function 'depositFunds' is valid, a #checkAmountDepositedIsValid function was made.
 
 ## How to install the code
 1. If not already installed: Install Node Version Manager (NVM): ```brew install nvm```
@@ -45,7 +44,7 @@ I began by drafting a BankAccount class and breaking it down into three main fun
 2. Run ```node```.
 3. Import the BankAccount class: ```const BankAccount = require('./bankAccount')```.
 4. Create an instance of the class, e.g.: ```const account = new BankAccount();```.
-5. Run one of three functions on the class instance: depositFunds, withdrawFunds, printStatement.
+5. Run any/all of the three public functions on the class instance: depositFunds, withdrawFunds, printStatement.
 - depositFunds(date, amountDeposited), e.g.: ```account.depositFunds('01/01/2023', 100.00);```. Please note that: the date must be a string in the format DD/MM/YYYY; you cannot make the transaction date earlier than the preceding transaction date; and amountDeposited must be a positive number.
 - withdrawFunds(date, amountWithdrawn), e.g.: ```account.withdrawFunds('02/01/2023', 50.00);```. Again, please note that: the date must be a string in the format DD/MM/YYYY; you cannot make the transaction date earlier than the preceding transaction date; and amountWithdrawn must be a positive number.
 - printStatement(), e.g.: ```account.printStatement();```
@@ -56,8 +55,8 @@ I began by drafting a BankAccount class and breaking it down into three main fun
 Test coverage for the project is 100%.
 
 # Screenshots
-![a screenshot of the program meeting the acceptance criteria in Node](./screenshots/node-acceptance-criteria-screenshot)
+![a screenshot of the program meeting the acceptance criteria in Node](./screenshots/node-acceptance-criteria-screenshot.png)
 
-![another screenshot of the program running in Node](./screenshots/node-other-example-screenshot)
+![another screenshot of the program running in Node](./screenshots/node-other-example-screenshot.png)
 
-![a screenshot of all 28 tests passing with 100% coverage](./screenshots/test-coverage-screenshot)
+![a screenshot of all 28 tests passing with 100% coverage](./screenshots/test-coverage-screenshot.png)
