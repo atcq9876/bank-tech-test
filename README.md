@@ -51,8 +51,8 @@ I began by drafting a BankAccount class and breaking it down into three main fun
 - printStatement(), e.g.: ```account.printStatement();```
 
 ## How to run tests on the code
-1. Run ```jest```.
-2. For test coverage, run ```jest --coverage```.
+1. Run ```npx jest```.
+2. For test coverage, run ```npx jest --coverage```.
 Test coverage for the project is 100%.
 
 # Screenshots
