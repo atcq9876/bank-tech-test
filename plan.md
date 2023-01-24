@@ -115,10 +115,8 @@ Functions:
 - additional test
     ~~- edit tests and re-run jest to check if when deposited/withdrawn is a number to 0dp, 1dp, 2dp, 3dp, that this is correctly handled as a number to 2dp~~
 
-- all features
-    - a deposit, a withdrawal, another deposit, another withdrawal, then printBankStatement
-    - deposit, withdrawal, printBankStatement, deposit, withdrawal, printBankStatement again
-    - etc.
+- all features (multiple times)
+    ~~- deposit(s), withdrawal(s), printBankStatement, deposit(s), withdrawal(s), printBankStatement again~~
 
 
 # Additional todos
