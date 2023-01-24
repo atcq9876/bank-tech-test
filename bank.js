@@ -15,6 +15,7 @@ class BankAccount {
 
   withdrawFunds(date, amountWithdrawn) {
     // reminder to use #checkDate again for date validation
+    if (typeof date !== 'string') throw new Error('Please enter the date as a string, in the format DD/MM/YYYY');
     this.#checkAmountWithdrawn(amountWithdrawn);
     this.balance -= amountWithdrawn;  
     this.statement += `\n${date} || || ${amountWithdrawn.toFixed(2)} || ${this.balance.toFixed(2)}`;

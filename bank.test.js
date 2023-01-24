@@ -183,4 +183,13 @@ describe('BankAccount', () => {
       bankAccount.withdrawFunds('05/01/23', '10.00');
     }).toThrow('Please enter a number to two decimal places for the amount withdrawn');
   })
+
+  test('throws an error when date is not a string', () => {
+    const bankAccount = new BankAccount();
+    bankAccount.depositFunds('04/01/23', 200.00);
+
+    expect(() => {
+      bankAccount.withdrawFunds(10012023, 100.00);
+    }).toThrow('Please enter the date as a string, in the format DD/MM/YYYY');
+  });
 })
