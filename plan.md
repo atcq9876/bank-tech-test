@@ -1,11 +1,11 @@
-# Requirements
+## Requirements
 - You should be able to interact with your code via a REPL like IRB or Node. (You don't need to implement a command line interface that takes input from STDIN.)
 - Deposits, withdrawal.
 - Account statement (date, amount, balance) printing.
 - Data can be kept in memory (it doesn't need to be stored to a database or anything).
 
 
-# Acceptance criteria
+## Acceptance criteria
 - Given a client makes a deposit of 1000 on 10-01-2023
 - And a deposit of 2000 on 13-01-2023
 - And a withdrawal of 500 on 14-01-2023
@@ -24,11 +24,11 @@ date        || credit   || debit    || balance
 10/01/2023  || 1000.00  ||          || 1000.00
 
 
-# Assumptions
+## Assumptions
 - Given that the acceptance criteria's example shows transactions only happening in chronological order, my program also assumes this is the case, i.e., if a transaction is added for 23/01/23, a transaction can not then be added for a date before this.
 
 
-# Plan
+## Plan
 Class:
 - BankAccount
 
@@ -64,7 +64,7 @@ Functions:
     - this.statement = "date || credit || debit || balance" + this.statement
 
 
-# Tests
+## Tests
 - depositFunds(amountDeposited, date)
     ~~- a valid deposit, then printBankStatement to check deposit amount and balance~~
     ~~- a different valid deposit, then printBankStatement to check deposit amount and balance~~
@@ -120,7 +120,7 @@ Functions:
 
 ~~- test it out in Node~~
 
-# Additional todos
+## Additional todos
 ~~- Add any necessary comments (none if it's clear what all code does)~~
 ~~- Refactor tests to use a before each to create const bankAccount~~
 ~~- Spread code over more than one line if line is too long (where possible without harming readability)~~
