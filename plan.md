@@ -1,3 +1,5 @@
+# Plan
+
 ## Requirements
 - You should be able to interact with your code via a REPL like IRB or Node. (You don't need to implement a command line interface that takes input from STDIN.)
 - Deposits, withdrawal.
@@ -125,4 +127,4 @@ Functions:
 ~~- Add any necessary comments (none if it's clear what all code does)~~
 ~~- Refactor tests to use a before each to create const bankAccount~~
 ~~- Spread code over more than one line if line is too long (where possible without harming readability)~~
-- Write README.md
+~~- Write README.md~~
