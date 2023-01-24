@@ -27,7 +27,9 @@ class BankAccount {
   }
 
   printStatement() {
-    if (this.previousTransactionDate === 0) return 'Current balance is 0, no transactions have taken place';
+    if (this.previousTransactionDate === 0) {
+      return 'Current balance is 0, no transactions have taken place';
+    }
     this.#formatStatement();
     return this.statement;
   }
