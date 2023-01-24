@@ -92,9 +92,9 @@ Functions:
     ~~- deposit funds, then a a different valid withdrawal, then printBankStatement to check deposit and withdrawal amounts and balance~~
     ~~- deposit funds, then two valid withdrawals, then printBankStatement to check deposit and withdrawal amounts and balance~~
     ~~- (refactor)~~
-    - throw error: if trying to withdraw but account contains no funds
-    - throw error: if trying to withdraw more than the balance (balance > 0)
-    - (refactor)
+    ~~- throw error: if trying to withdraw but account contains no funds~~
+    ~~- throw error: if trying to withdraw more than the balance (balance > 0)~~
+    ~~- (refactor)~~
     - throw error: invalid date (incorrect format)
     - throw error: invalid date (date is before the date of the previous transaction)
     - throw error: invalid date (incorrect data type)
