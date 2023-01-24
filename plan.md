@@ -113,7 +113,7 @@ Functions:
     ~~- (throw error / print a message saying 0 balance) before any deposits or withdrawals (i.e., empty statement)~~
 
 - additional test
-    - check if amount deposited/withdrawn is a number to 2dp, e.g., 20.1 or 20.121 would throw an error OR change number to 2dp float after receiving it (e.g., amountWithdrawn = amountWithdrawn.toFixed(2))
+    ~~- edit tests and re-run jest to check if when deposited/withdrawn is a number to 0dp, 1dp, 2dp, 3dp, that this is correctly handled as a number to 2dp~~
 
 - all features
     - a deposit, a withdrawal, another deposit, another withdrawal, then printBankStatement
