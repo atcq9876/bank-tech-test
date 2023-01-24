@@ -192,4 +192,13 @@ describe('BankAccount', () => {
       bankAccount.withdrawFunds(10012023, 100.00);
     }).toThrow('Please enter the date as a string, in the format DD/MM/YYYY');
   });
+
+  test('throws an error when date is earlier than previous deposit', () => {
+    const bankAccount = new BankAccount();
+    bankAccount.depositFunds('05/01/2023', 200.00);
+    
+    expect(() => {
+      bankAccount.withdrawFunds('03/01/2023', 150.00);
+    }).toThrow(`You cannot enter a date that is earlier than the previous transaction's`);
+  });
 })
