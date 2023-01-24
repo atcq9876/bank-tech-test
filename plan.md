@@ -124,4 +124,5 @@ Functions:
 # Additional todos
 - Add any necessary comments (none if it's clear what all code does)
 - Make sure lines are all within character limit
+- Refactor tests to use a before each to create const bankAccount?
 - Write README.md
