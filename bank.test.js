@@ -34,7 +34,7 @@ describe('BankAccount', () => {
       .toEqual('date || credit || debit || balance\n01/01/2023 || 250.00 || || 250.00\n01/01/2023 || 500.00 || || 750.00');
   })
 
-  it('prints a statement after a valid withdrawal not on 01/01/2023', () => {
+  it('prints a statement after a valid deposit not on 01/01/2023', () => {
     const bankAccount = new BankAccount();
     bankAccount.depositFunds('02/01/2023', 300.00);
 
