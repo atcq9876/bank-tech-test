@@ -55,8 +55,11 @@ I began by drafting a BankAccount class and breaking it down into three main fun
 Test coverage for the project is 100%.
 
 # Screenshots
+- Screenshot of the program meeting the acceptance criteria in Node
 ![a screenshot of the program meeting the acceptance criteria in Node](./screenshots/node-acceptance-criteria-screenshot.png)
 
+- A screenshot of a different series of input and output being run in Node
 ![another screenshot of the program running in Node](./screenshots/node-other-example-screenshot.png)
 
+- A screenshot of all 28 tests passing with 100% coverage
 ![a screenshot of all 28 tests passing with 100% coverage](./screenshots/test-coverage-screenshot.png)
