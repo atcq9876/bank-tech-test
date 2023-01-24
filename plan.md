@@ -98,10 +98,10 @@ Functions:
     ~~- throw error: invalid withdrawal (amount is negative)~~
     ~~- throw error: invalid withdrawal (amount is 0)~~
     ~~- (refactor)~~
-    - throw error: invalid withdrawal (amount is not a 2dp float)
-        - int
-        - several dp float
-    - (refactor)
+    ~~- throw error: invalid withdrawal (amount is not a 2dp float)~~
+        ~~- int~~
+        ~~- several dp float~~
+    ~~- (refactor)~~
     - throw error: invalid date (incorrect format)
     - throw error: invalid date (date is before the date of the previous transaction)
     - throw error: invalid date (incorrect data type)

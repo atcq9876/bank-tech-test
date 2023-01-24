@@ -15,10 +15,7 @@ class BankAccount {
 
   withdrawFunds(date, amountWithdrawn) {
     // reminder to use #checkDate again for date validation
-    // reminder to make a #checkAmountWithdrawn method for amountWithdrawn validation
-    if (typeof amountWithdrawn !== 'number') throw new Error('Please enter a number to two decimal places for the amount withdrawn');
-    if (amountWithdrawn <= 0) throw new Error('Only positive amounts to 2 decimal places can be withdrawn');
-    if (this.balance < amountWithdrawn) throw new Error(`Current balance is ${this.balance.toFixed(2)}, withdrawals must not exceed the balance`);
+    this.#checkAmountWithdrawn(amountWithdrawn);
     this.balance -= amountWithdrawn;  
     this.statement += `\n${date} || || ${amountWithdrawn.toFixed(2)} || ${this.balance.toFixed(2)}`;
   }
@@ -38,6 +35,12 @@ class BankAccount {
   #checkAmountDeposited(amountDeposited) {
     if (typeof amountDeposited !== 'number') throw new Error('Please enter a number to two decimal places for the amount deposited');
     if (amountDeposited <= 0) throw new Error('Only positive amounts to 2 decimal places can be deposited');
+  }
+
+  #checkAmountWithdrawn(amountWithdrawn) {
+    if (typeof amountWithdrawn !== 'number') throw new Error('Please enter a number to two decimal places for the amount withdrawn');
+    if (amountWithdrawn <= 0) throw new Error('Only positive amounts to 2 decimal places can be withdrawn');
+    if (this.balance < amountWithdrawn) throw new Error(`Current balance is ${this.balance.toFixed(2)}, withdrawals must not exceed the balance`);
   }
 }
 
