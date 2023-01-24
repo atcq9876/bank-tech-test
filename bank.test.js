@@ -147,4 +147,13 @@ describe('BankAccount', () => {
       bankAccount.withdrawFunds('04/01/2023', 50.00);
     }).toThrow('Current balance is 0.00, withdrawals must not exceed the balance');
   })
+
+  test('throws error when account balance is less than withdrawal amount (but not 0)', () => {
+    const bankAccount = new BankAccount();
+    bankAccount.depositFunds('04/01/23', 50.00);
+
+    expect(() => {
+      bankAccount.withdrawFunds('05/01/2023', 100.00);
+    }).toThrow('Current balance is 50.00, withdrawals must not exceed the balance');
+  })
 })

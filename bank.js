@@ -16,7 +16,7 @@ class BankAccount {
   withdrawFunds(date, amountWithdrawn) {
     // reminder to use #checkDate again for date validation
     // reminder to make a #checkAmountWithdrawn method for amountWithdrawn validation
-    if (this.balance === 0) throw new Error('Current balance is 0.00, withdrawals must not exceed the balance');
+    if (this.balance < amountWithdrawn) throw new Error(`Current balance is ${this.balance.toFixed(2)}, withdrawals must not exceed the balance`);
     this.balance -= amountWithdrawn;  
     this.statement += `\n${date} || || ${amountWithdrawn.toFixed(2)} || ${this.balance.toFixed(2)}`;
   }
