@@ -2,8 +2,8 @@ class BankAccount {
   constructor() {
     this.balance = 0;
     this.transactions = '';
-    this.statement = '';
     this.previousTransactionDate = 0;
+    this.statement = '';
   }
   
   depositFunds(date, amountDeposited) {
