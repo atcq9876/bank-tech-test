@@ -122,4 +122,22 @@ describe('BankAccount', () => {
 
     expect(bankAccount.printStatement()).toEqual('date || credit || debit || balance\n03/01/2023 || 200.00 || || 200.00\n04/01/2023 || || 150.00 || 50.00');
   })
+
+  it('prints a statement after a different deposit and different withdrawal', () => {
+    const bankAccount = new BankAccount();
+    bankAccount.depositFunds('04/01/2023', 250.00);
+    bankAccount.withdrawFunds('05/01/2023', 200.00);
+
+    expect(bankAccount.printStatement()).toEqual('date || credit || debit || balance\n04/01/2023 || 250.00 || || 250.00\n05/01/2023 || || 200.00 || 50.00');
+  })
+
+
+  // it('prints a statement after a two valid withdrawals', () => {
+  //   const bankAccount = new BankAccount();
+  //   bankAccount.depositFunds('03/01/2023', 200.00);
+  //   bankAccount.withdrawFunds('04/01/2023', 50.00);
+  //   bankAccount.withdrawFunds('05/01/2023', 100.00);
+
+  //   expect(bankAccount.printStatement()).toEqual('date || credit || debit || balance\n03/01/2023 || 200.00 || || 200.00\n04/01/2023 || || 50.00 || 150.00\n05/01/2023 || || 100.00 || 50.00');
+  // })
 })
