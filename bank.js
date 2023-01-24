@@ -16,6 +16,8 @@ class BankAccount {
   withdrawFunds(date, amountWithdrawn) {
     // reminder to use #checkDate again for date validation
     if (typeof date !== 'string') throw new Error('Please enter the date as a string, in the format DD/MM/YYYY');
+    const dateFormat = /^(0?[1-9]|[1-2][0-9]|3[01])[\/](0?[1-9]|1[0-2])/;
+    if (!date.match(dateFormat)) throw new Error('Dates must be in the format DD/MM/YYYY')
     if (date < this.previousTransactionDate) throw new Error(`You cannot enter a date that is earlier than the previous transaction's`);
     this.#checkAmountWithdrawn(amountWithdrawn);
     this.balance -= amountWithdrawn;  

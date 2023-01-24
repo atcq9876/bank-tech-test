@@ -105,8 +105,9 @@ Functions:
     ~~- throw error: invalid date (incorrect data type)~~
         ~~- number~~
         ~~- nil/null~~
-    - throw error: invalid date (date is before the date of the previous transaction)
+    ~~- throw error: invalid date (date is before the date of the previous transaction)~~
     - throw error: invalid date (incorrect format)
+    - (refactor)
 
 - printBankStatement()
     - (throw error / print a message saying 0 balance) before any deposits or withdrawals (i.e., empty statement)
