@@ -156,4 +156,13 @@ describe('BankAccount', () => {
       bankAccount.withdrawFunds('05/01/2023', 100.00);
     }).toThrow('Current balance is 50.00, withdrawals must not exceed the balance');
   })
+
+  test('throws error if withdrawing an amount that is negative', () => {
+    const bankAccount = new BankAccount();
+    bankAccount.depositFunds('04/01/23', 50.00);
+
+    expect(() => {
+      bankAccount.withdrawFunds('05/01/23', -10.00);
+    }).toThrow('Only positive amounts to 2 decimal places can be withdrawn')
+  })
 })
