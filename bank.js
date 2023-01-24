@@ -20,6 +20,7 @@ class BankAccount {
     this.#checkAmountWithdrawn(amountWithdrawn);
     this.balance -= amountWithdrawn;  
     this.statement += `\n${date} || || ${amountWithdrawn.toFixed(2)} || ${this.balance.toFixed(2)}`;
+    this.previousTransactionDate = date;
   }
 
   printStatement() {
