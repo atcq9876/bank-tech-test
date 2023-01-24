@@ -139,4 +139,12 @@ describe('BankAccount', () => {
 
     expect(bankAccount.printStatement()).toEqual('date || credit || debit || balance\n03/01/2023 || 200.00 || || 200.00\n04/01/2023 || || 50.00 || 150.00\n05/01/2023 || || 100.00 || 50.00');
   })
+
+  test('throws error when account balance is 0', () => {
+    const bankAccount = new BankAccount();
+
+    expect(() => {
+      bankAccount.withdrawFunds('04/01/2023', 50.00);
+    }).toThrow('Current balance is 0, withdrawals must not exceed the balance');
+  })
 })
