@@ -121,7 +121,7 @@ Functions:
 - test it out in Node
 
 # Additional todos
-- Add any necessary comments (none if it's clear what all code does)
+~~- Add any necessary comments (none if it's clear what all code does)~~
+~~- Refactor tests to use a before each to create const bankAccount~~
 - Make sure lines are all within character limit
-- Refactor tests to use a before each to create const bankAccount?
 - Write README.md
