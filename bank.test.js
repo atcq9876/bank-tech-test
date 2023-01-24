@@ -145,6 +145,6 @@ describe('BankAccount', () => {
 
     expect(() => {
       bankAccount.withdrawFunds('04/01/2023', 50.00);
-    }).toThrow('Current balance is 0, withdrawals must not exceed the balance');
+    }).toThrow('Current balance is 0.00, withdrawals must not exceed the balance');
   })
 })
