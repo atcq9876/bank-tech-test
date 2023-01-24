@@ -110,18 +110,18 @@ Functions:
     ~~- (refactor)~~
 
 - printBankStatement()
-    - (throw error / print a message saying 0 balance) before any deposits or withdrawals (i.e., empty statement)
+    ~~- (throw error / print a message saying 0 balance) before any deposits or withdrawals (i.e., empty statement)~~
+
+- additional test
+    - check if amount deposited/withdrawn is a number to 2dp, e.g., 20.1 or 20.121 would throw an error OR change number to 2dp float after receiving it (e.g., amountWithdrawn = amountWithdrawn.toFixed(2))
 
 - all features
     - a deposit, a withdrawal, another deposit, another withdrawal, then printBankStatement
     - deposit, withdrawal, printBankStatement, deposit, withdrawal, printBankStatement again
     - etc.
 
-- additional test
-    - check if amount deposited/withdrawn is a number to 2dp, e.g., 20.1 or 20.121 would throw an error OR change number to 2dp float after receiving it (e.g., amountWithdrawn = amountWithdrawn.toFixed(2))
-
 
 # Additional todos
-- Make sure lines are all within character limit
 - Add any necessary comments (none if it's clear what all code does)
+- Make sure lines are all within character limit
 - Write README.md
