@@ -118,10 +118,10 @@ Functions:
 - all features (multiple times)
     ~~- deposit(s), withdrawal(s), printBankStatement, deposit(s), withdrawal(s), printBankStatement again~~
 
-- test it out in Node
+~~- test it out in Node~~
 
 # Additional todos
 ~~- Add any necessary comments (none if it's clear what all code does)~~
 ~~- Refactor tests to use a before each to create const bankAccount~~
-- Make sure lines are all within character limit
+~~- Spread code over more than one line if line is too long (where possible without harming readability)~~
 - Write README.md
