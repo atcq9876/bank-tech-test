@@ -226,4 +226,19 @@ describe('BankAccount', () => {
     
     expect(bankAccount.printStatement()).toEqual('Current balance is 0, no transactions have taken place');
   })
+
+  it('correctly handles multiple deposits, withdrawals, and printStatements', () => {
+    const bankAccount = new BankAccount();
+    bankAccount.depositFunds('01/01/2023', 500.00);
+    bankAccount.withdrawFunds('02/01/2023', 100.00);
+    bankAccount.withdrawFunds('02/01/2023', 50.00)
+
+    expect(bankAccount.printStatement()).toEqual('date || credit || debit || balance\n01/01/2023 || 500.00 || || 500.00\n02/01/2023 || || 100.00 || 400.00\n02/01/2023 || || 50.00 || 350.00');
+
+    bankAccount.depositFunds('02/01/2023', 100.00);
+    bankAccount.depositFunds('03/01/2023', 75.50);
+    bankAccount.withdrawFunds('05/01/2023', 200.00);
+    
+    expect(bankAccount.printStatement()).toEqual('date || credit || debit || balance\n01/01/2023 || 500.00 || || 500.00\n02/01/2023 || || 100.00 || 400.00\n02/01/2023 || || 50.00 || 350.00\n02/01/2023 || 100.00 || || 450.00\n03/01/2023 || 75.50 || || 525.50\n05/01/2023 || || 200.00 || 325.50');
+  })
 })
