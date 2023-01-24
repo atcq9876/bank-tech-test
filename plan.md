@@ -34,7 +34,7 @@ Class:
 
 Functions:
 - constructor
-    - this.transactions = []
+    - this.transactions = ''
     - this.balance = 0
     - this.statement = []
 
@@ -42,26 +42,27 @@ Functions:
     - check for date errors (data types, is correct format, date is after previous date, etc.)
     - check for amountDeposited errors (data types, positive 2dp float, etc.)
     - this.balance += amountDeposited
-    - this.transactions.push([date], [amountDeposited], [this.balance])
+    - this.transactions = date, amountDeposited, this.balance += this.transactions
 
 - withdrawFunds(date, amountWithdrawn)
     - check for date errors (data types, is correct format, date is after previous date, etc.)
     - check for amountWithdrawn errors (data types, positive 2dp float, etc.)
     - this.balance -= amountWithdrawn
-    - this.transactions.push([date] [amountWithdrawn], [this.balance])
+    - this.transactions = date, amountWithdrawn, this.balance += this.transactions
 
 - printBankStatement()
-    - createStatement()
-    - return this.statement
-
-- #createStatement()
     - formatStatement()
     - return this.statement
 
+~~- #createStatement()~~
+    ~~- formatStatement()~~
+    ~~- return this.statement~~
+
 - #formatStatement()
-    - this.statement = map through transactions; within each iteration add '\n' and '||' formatting and join sub-arrays into a string;
-    - this.statement.join (join the formatted array into a string)
-    - this.statement = "date || credit || debit || balance" + this.statement
+    - this.statement = header + this.transactions
+    ~~- this.statement = map through transactions; within each iteration add '\n' and '||' formatting and join sub-arrays into a string;~~
+    ~~- this.statement.join (join the formatted array into a string)~~
+    ~~- this.statement = "date || credit || debit || balance" + this.statement~~
 
 
 ## Tests
