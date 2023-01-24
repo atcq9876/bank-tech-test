@@ -1,6 +1,7 @@
 class BankAccount { 
   constructor() {
     this.balance = 0;
+    this.transactions = '';
     this.statement = '';
     this.previousTransactionDate = 0;
   }
@@ -9,7 +10,7 @@ class BankAccount {
     this.#checkDate(date);
     this.#checkAmountDeposited(amountDeposited);
     this.balance += amountDeposited;
-    this.statement = `\n${date} || ${amountDeposited.toFixed(2)} || || ${this.balance.toFixed(2)}` + this.statement;
+    this.transactions = `\n${date} || ${amountDeposited.toFixed(2)} || || ${this.balance.toFixed(2)}` + this.transactions;
     this.previousTransactionDate = date;
   }
 
@@ -17,7 +18,7 @@ class BankAccount {
     this.#checkDate(date);
     this.#checkAmountWithdrawn(amountWithdrawn);
     this.balance -= amountWithdrawn;  
-    this.statement = `\n${date} || || ${amountWithdrawn.toFixed(2)} || ${this.balance.toFixed(2)}` + this.statement;
+    this.transactions = `\n${date} || || ${amountWithdrawn.toFixed(2)} || ${this.balance.toFixed(2)}` + this.transactions;
     this.previousTransactionDate = date;
   }
 
@@ -47,7 +48,7 @@ class BankAccount {
   }
 
   #formatStatement() {
-    this.statement = 'date || credit || debit || balance' + this.statement;
+    this.statement = 'date || credit || debit || balance' + this.transactions;
   }
 }
 
