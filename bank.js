@@ -7,16 +7,16 @@ class BankAccount {
   }
   
   depositFunds(date, amountDeposited) {
-    this.#checkDate(date);
-    this.#checkAmountDeposited(amountDeposited);
+    this.#checkDateIsValid(date);
+    this.#checkAmountDepositedIsValid(amountDeposited);
     this.balance += amountDeposited;
     this.transactions = `\n${date} || ${amountDeposited.toFixed(2)} || || ${this.balance.toFixed(2)}` + this.transactions;
     this.previousTransactionDate = date;
   }
 
   withdrawFunds(date, amountWithdrawn) {
-    this.#checkDate(date);
-    this.#checkAmountWithdrawn(amountWithdrawn);
+    this.#checkDateIsValid(date);
+    this.#checkAmountWithdrawnIsValid(amountWithdrawn);
     this.balance -= amountWithdrawn;  
     this.transactions = `\n${date} || || ${amountWithdrawn.toFixed(2)} || ${this.balance.toFixed(2)}` + this.transactions;
     this.previousTransactionDate = date;
@@ -29,19 +29,19 @@ class BankAccount {
   }
 
   // private methods
-  #checkDate(date) {
+  #checkDateIsValid(date) {
     if (typeof date !== 'string') throw new Error('Please enter the date as a string, in the format DD/MM/YYYY');
     const dateFormat = /^(0?[1-9]|[1-2][0-9]|3[01])[\/](0?[1-9]|1[0-2])/;
     if (!date.match(dateFormat)) throw new Error('Dates must be in the format DD/MM/YYYY')
     if (date < this.previousTransactionDate) throw new Error(`You cannot enter a date that is earlier than the previous transaction's`);
   }
 
-  #checkAmountDeposited(amountDeposited) {
+  #checkAmountDepositedIsValid(amountDeposited) {
     if (typeof amountDeposited !== 'number') throw new Error('Please enter a number to two decimal places for the amount deposited');
     if (amountDeposited <= 0) throw new Error('Only positive amounts can be deposited');
   }
 
-  #checkAmountWithdrawn(amountWithdrawn) {
+  #checkAmountWithdrawnIsValid(amountWithdrawn) {
     if (typeof amountWithdrawn !== 'number') throw new Error('Please enter a number to two decimal places for the amount withdrawn');
     if (amountWithdrawn <= 0) throw new Error('Only positive amounts can be withdrawn');
     if (this.balance < amountWithdrawn) throw new Error(`Current balance is ${this.balance.toFixed(2)}, withdrawals must not exceed this amount`);
