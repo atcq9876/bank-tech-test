@@ -1,7 +1,7 @@
 class BankAccount { 
   constructor() {
     this.balance = 0;
-    this.statement = 'date || credit || debit || balance';
+    this.statement = '';
     this.previousTransactionDate = 0;
   }
   
@@ -9,7 +9,7 @@ class BankAccount {
     this.#checkDate(date);
     this.#checkAmountDeposited(amountDeposited);
     this.balance += amountDeposited;
-    this.statement += `\n${date} || ${amountDeposited.toFixed(2)} || || ${this.balance.toFixed(2)}`;
+    this.statement = `\n${date} || ${amountDeposited.toFixed(2)} || || ${this.balance.toFixed(2)}` + this.statement;
     this.previousTransactionDate = date;
   }
 
@@ -17,12 +17,13 @@ class BankAccount {
     this.#checkDate(date);
     this.#checkAmountWithdrawn(amountWithdrawn);
     this.balance -= amountWithdrawn;  
-    this.statement += `\n${date} || || ${amountWithdrawn.toFixed(2)} || ${this.balance.toFixed(2)}`;
+    this.statement = `\n${date} || || ${amountWithdrawn.toFixed(2)} || ${this.balance.toFixed(2)}` + this.statement;
     this.previousTransactionDate = date;
   }
 
   printStatement() {
     if (this.previousTransactionDate === 0) return 'Current balance is 0, no transactions have taken place';
+    this.#formatStatement();
     return this.statement;
   }
 
@@ -43,6 +44,10 @@ class BankAccount {
     if (typeof amountWithdrawn !== 'number') throw new Error('Please enter a number to two decimal places for the amount withdrawn');
     if (amountWithdrawn <= 0) throw new Error('Only positive amounts to 2 decimal places can be withdrawn');
     if (this.balance < amountWithdrawn) throw new Error(`Current balance is ${this.balance.toFixed(2)}, withdrawals must not exceed the balance`);
+  }
+
+  #formatStatement() {
+    this.statement = 'date || credit || debit || balance' + this.statement;
   }
 }
 
