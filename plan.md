@@ -132,8 +132,8 @@ Functions:
 
 ## Plan for second class
 class BankStatement
-constructor(bankAccount instance) {
-    this.bankAccount = bankAccount instance
+constructor(BankAccount instance) {
+    this.transactions = BankAccount instance .transactions
 }
 
 printStatement() {
