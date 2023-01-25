@@ -1,6 +1,6 @@
 class BankStatement {
-  constructor(transactions) {
-    this.transactions = transactions;
+  constructor(bankAccount) {
+    this.transactions = bankAccount.transactions;
   }
   
   printStatement() {
