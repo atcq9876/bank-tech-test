@@ -21,4 +21,11 @@ describe('BankStatement', () => {
     
     expect(bankStatement.printStatement()).toEqual('date || credit || debit || balance\n01/01/2023 || 200.00 || || 200.00');
   })
+
+  it('prints a statment for two deposits', () => {
+    const transactions = '\n01/01/2023 || 500.00 || || 750.00\n01/01/2023 || 250.00 || || 250.00';
+    const bankStatement = new BankStatement(transactions);
+    
+    expect(bankStatement.printStatement()).toEqual('date || credit || debit || balance\n01/01/2023 || 500.00 || || 750.00\n01/01/2023 || 250.00 || || 250.00');
+  })
 })
