@@ -3,7 +3,6 @@ class BankAccount {
     this.balance = 0;
     this.transactions = '';
     this.previousTransactionDate = 0;
-    this.statement = '';
   }
   
   depositFunds(date, amountDeposited) {
@@ -27,11 +26,6 @@ class BankAccount {
   }
 
   printStatement() {
-    if (this.previousTransactionDate === 0) {
-      return 'Current balance is 0, no transactions have taken place';
-    }
-    this.#formatStatement();
-    return this.statement;
   }
 
   // private methods
@@ -62,10 +56,6 @@ class BankAccount {
     } else if (this.balance < amountWithdrawn) {
       throw new Error(`Current balance is ${this.balance.toFixed(2)}, withdrawals must not exceed this amount`);
     }
-  }
-
-  #formatStatement() {
-    this.statement = 'date || credit || debit || balance' + this.transactions;
   }
 }
 
