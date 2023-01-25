@@ -152,6 +152,7 @@ Mock the transactions data that would usually be passed as the BankAccount insta
 - A deposit and one withdrawal
 - A deposit and more than one withdrawal
 - More than one deposit and more than one withdrawal
+- Any errors? E.g., checking the input is a string? What else?
 
 ## Other changes after introducting second class
 First test-drive the BankStatement class, then:
