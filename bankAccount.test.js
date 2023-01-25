@@ -1,10 +1,13 @@
 const BankAccount = require('./bankAccount');
+const BankStatement = require('./bankStatement');
+jest.mock('./bankStatement');
 
 describe('BankAccount', () => {
   let bankAccount;
 
   beforeEach(() => {
     bankAccount = new BankAccount();
+    BankStatement.mockClear();
   })
   
   it('prints a statement after one valid deposit', () => {
@@ -205,5 +208,11 @@ describe('BankAccount', () => {
     bankAccount.withdrawFunds('05/01/2023', 200.00);
     
     expect(bankAccount.transactions).toEqual('\n05/01/2023 || || 200.00 || 325.50\n03/01/2023 || 75.50 || || 525.50\n02/01/2023 || 100.00 || || 450.00\n02/01/2023 || || 50.00 || 350.00\n02/01/2023 || || 100.00 || 400.00\n01/01/2023 || 500.00 || || 500.00');
+  })
+
+  it('creates an instance of BankStatement when getStatement() is called', () => {
+    bankAccount.getStatement();
+
+    expect(BankStatement).toHaveBeenCalledTimes(1);  
   })
 })

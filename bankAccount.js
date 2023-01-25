@@ -1,3 +1,5 @@
+const BankStatement = require('./bankStatement');
+
 class BankAccount { 
   constructor() {
     this.balance = 0;
@@ -25,7 +27,9 @@ class BankAccount {
     this.previousTransactionDate = date;
   }
 
-  printStatement() {
+  getStatement() {
+    const bankStatement = new BankStatement(this);
+    return bankStatement.printStatement();
   }
 
   // private methods
