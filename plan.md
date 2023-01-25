@@ -128,3 +128,40 @@ Functions:
 ~~- Refactor tests to use a before each to create const bankAccount~~
 ~~- Spread code over more than one line if line is too long (where possible without harming readability)~~
 ~~- Write README.md~~
+
+
+## Plan for second class
+class BankStatement
+constructor(bankAccount instance) {
+    this.bankAccount = bankAccount instance
+}
+
+printStatement() {
+    see printStatement() function originally in BankAccount
+}
+
+#formatStatement() {
+    see #formatStatement() function originally in BankAccount
+}
+
+## Unit tests for BankStatement
+Mock the transactions data that would usually be passed as the BankAccount instance/dependency or its transactions, e.g.:
+- No transactions
+- One deposit
+- More than one deposit
+- A deposit and one withdrawal
+- A deposit and more than one withdrawal
+- More than one deposit and more than one withdrawal
+
+## Other changes after introducting second class
+First test-drive the BankStatement class, then:
+
+BankAccount unit tests
+- Update tests to remove printStatement - could instead check bankAccount.transactions (and bankAccount.balance) to ensure that the deposits and withdrawals have been successfully stored within the class instance
+
+BankAccount class
+- In BankAccount, could either remove the printStatement() class, or edit it to create a new instance of BankAccount and pass it the BankAccount.transactions data as an argument/dependency
+- If keeping a printStatement() function as outlined above, think about how this could be unit tested
+
+Add integration tests
+- Do this at the end
