@@ -145,17 +145,16 @@ printStatement() {
 }
 
 ## Unit tests for BankStatement
-Mock the transactions data that would usually be passed as the BankAccount instance/dependency or its transactions, e.g.:
-- No transactions
-- One deposit
-- More than one deposit
-- A deposit and one withdrawal
-- A deposit and more than one withdrawal
-- More than one deposit and more than one withdrawal
-- Any errors? E.g., checking the input is a string? What else?
+Mock the BankAccount class (instances of which will be passed to the BankStatement class):
+~~- No transactions~~
+~~- One deposit~~
+~~- More than one deposit~~
+~~- A deposit and one withdrawal~~
+~~- Error: make sure input passed to class is an instance of the BankAccount class~~
+(No more tests necessary after this, no extra logic needs to be added)
 
 ## Other changes after introducting second class
-First test-drive the BankStatement class, then:
+~~First test-drive the BankStatement class, then:~~
 
 BankAccount unit tests
 - Update tests to remove printStatement - could instead check bankAccount.transactions (and bankAccount.balance) to ensure that the deposits and withdrawals have been successfully stored within the class instance
