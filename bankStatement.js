@@ -1,5 +1,8 @@
+const BankAccount = require('./bankAccount');
+
 class BankStatement {
   constructor(bankAccount) {
+    if (!(bankAccount instanceof BankAccount)) throw new Error('Only an instance of BankAccount can be passed to BankStatement')
     this.transactions = bankAccount.transactions;
   }
   
