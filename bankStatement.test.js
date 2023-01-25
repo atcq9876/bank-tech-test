@@ -46,4 +46,11 @@ describe('BankStatement', () => {
     
     expect(bankStatement.printStatement()).toEqual('date || credit || debit || balance\n01/01/2023 || 500.00 || || 750.00\n01/01/2023 || 250.00 || || 250.00');
   })
+
+  it('prints a statement after a deposit then withdrawal', () => {
+    bankAccount.transactions = '\n04/01/2023 || || 100.00 || 100.00\n03/01/2023 || 200.00 || || 200.00';
+    const bankStatement = new BankStatement(bankAccount);
+
+    expect(bankStatement.printStatement()).toEqual('date || credit || debit || balance\n04/01/2023 || || 100.00 || 100.00\n03/01/2023 || 200.00 || || 200.00');
+  })
 })
