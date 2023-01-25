@@ -11,12 +11,14 @@ describe('BankStatement', () => {
   })
   
   test('throws error if argument passed to BankStatement is not an instance of child BankAccount', () => {
+    bankAccount.transactions = '\n01/01/2023 || 100.00 || || 100.00'
+
     expect(() => {
-      new BankStatement(new BankAccount());
+      new BankStatement(bankAccount);
     }).not.toThrow();
     expect(() => {
       new BankStatement('string');
-    }).toThrow('Only an instance of BankAccount can be passed to BankStatement');
+    }).toThrow('Only instances of BankAccount should be passed to BankStatement');
   })
   
   it('prints a message saying the balance is 0 if no transactions have taken place', () => {
