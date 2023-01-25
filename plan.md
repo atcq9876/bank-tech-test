@@ -157,11 +157,10 @@ Mock the BankAccount class (instances of which will be passed to the BankStateme
 ~~First test-drive the BankStatement class, then:~~
 
 BankAccount unit tests
-- Update tests to remove printStatement - could instead check bankAccount.transactions (and bankAccount.balance) to ensure that the deposits and withdrawals have been successfully stored within the class instance
+~~- Update tests to remove printStatement - could instead check bankAccount.transactions (and bankAccount.balance) to ensure that the deposits and withdrawals have been successfully stored within the class instance~~
 
 BankAccount class
-- In BankAccount, could either remove the printStatement() class, or edit it to create a new instance of BankAccount and pass it the BankAccount.transactions data as an argument/dependency
-- If keeping a printStatement() function as outlined above, think about how this could be unit tested
+~~- In BankAccount, edit printStatement() function to create a new instance of BankStatement and pass it 'this' (i.e., the current instance of BankAccount) as an argument/dependency (mock the BankStatement class in its unit test(s))~~
 
 Add integration tests
 - Do this at the end
