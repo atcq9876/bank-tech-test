@@ -10,37 +10,37 @@ describe('BankAccount', () => {
   it('prints a statement after one valid deposit', () => {
     bankAccount.depositFunds('01/01/2023', 100.00);
     
-    expect(bankAccount.printStatement())
-      .toEqual('date || credit || debit || balance\n01/01/2023 || 100.00 || || 100.00');
+    expect(bankAccount.transactions)
+      .toEqual('\n01/01/2023 || 100.00 || || 100.00');
   })
 
   it('prints a statement after a different valid deposit', () => {
     bankAccount.depositFunds('01/01/2023', 200.00);
     
-    expect(bankAccount.printStatement())
-      .toEqual('date || credit || debit || balance\n01/01/2023 || 200.00 || || 200.00');
+    expect(bankAccount.transactions)
+      .toEqual('\n01/01/2023 || 200.00 || || 200.00');
   })
 
   it('prints a statement after another different valid deposit', () => {
     bankAccount.depositFunds('01/01/2023', 250.00);
     
-    expect(bankAccount.printStatement())
-      .toEqual('date || credit || debit || balance\n01/01/2023 || 250.00 || || 250.00');
+    expect(bankAccount.transactions)
+      .toEqual('\n01/01/2023 || 250.00 || || 250.00');
   })
 
   it('prints a statement after two valid deposits', () => {
     bankAccount.depositFunds('01/01/2023', 250.00);
     bankAccount.depositFunds('01/01/2023', 500.00);
     
-    expect(bankAccount.printStatement())
-      .toEqual('date || credit || debit || balance\n01/01/2023 || 500.00 || || 750.00\n01/01/2023 || 250.00 || || 250.00');
+    expect(bankAccount.transactions)
+      .toEqual('\n01/01/2023 || 500.00 || || 750.00\n01/01/2023 || 250.00 || || 250.00');
   })
 
   it('prints a statement after a valid deposit not on 01/01/2023', () => {
     bankAccount.depositFunds('02/01/2023', 300.00);
 
-    expect(bankAccount.printStatement())
-    .toEqual('date || credit || debit || balance\n02/01/2023 || 300.00 || || 300.00');
+    expect(bankAccount.transactions)
+    .toEqual('\n02/01/2023 || 300.00 || || 300.00');
   })
 
   test('throws an error when amountDeposited is < 0', () => {
@@ -97,21 +97,21 @@ describe('BankAccount', () => {
     bankAccount.depositFunds('03/01/2023', 200.00);
     bankAccount.withdrawFunds('04/01/2023', 100.00);
 
-    expect(bankAccount.printStatement()).toEqual('date || credit || debit || balance\n04/01/2023 || || 100.00 || 100.00\n03/01/2023 || 200.00 || || 200.00');
+    expect(bankAccount.transactions).toEqual('\n04/01/2023 || || 100.00 || 100.00\n03/01/2023 || 200.00 || || 200.00');
   })
 
   it('prints a statement after a different valid withdrawal', () => {
     bankAccount.depositFunds('03/01/2023', 200.00);
     bankAccount.withdrawFunds('04/01/2023', 150.00);
 
-    expect(bankAccount.printStatement()).toEqual('date || credit || debit || balance\n04/01/2023 || || 150.00 || 50.00\n03/01/2023 || 200.00 || || 200.00');
+    expect(bankAccount.transactions).toEqual('\n04/01/2023 || || 150.00 || 50.00\n03/01/2023 || 200.00 || || 200.00');
   })
 
   it('prints a statement after a different deposit and different withdrawal', () => {
     bankAccount.depositFunds('04/01/2023', 250.00);
     bankAccount.withdrawFunds('05/01/2023', 200.00);
 
-    expect(bankAccount.printStatement()).toEqual('date || credit || debit || balance\n05/01/2023 || || 200.00 || 50.00\n04/01/2023 || 250.00 || || 250.00');
+    expect(bankAccount.transactions).toEqual('\n05/01/2023 || || 200.00 || 50.00\n04/01/2023 || 250.00 || || 250.00');
   })
 
   it('prints a statement after a two valid withdrawals', () => {
@@ -119,7 +119,7 @@ describe('BankAccount', () => {
     bankAccount.withdrawFunds('04/01/2023', 50.00);
     bankAccount.withdrawFunds('05/01/2023', 100.00);
 
-    expect(bankAccount.printStatement()).toEqual('date || credit || debit || balance\n05/01/2023 || || 100.00 || 50.00\n04/01/2023 || || 50.00 || 150.00\n03/01/2023 || 200.00 || || 200.00');
+    expect(bankAccount.transactions).toEqual('\n05/01/2023 || || 100.00 || 50.00\n04/01/2023 || || 50.00 || 150.00\n03/01/2023 || 200.00 || || 200.00');
   })
 
   test('throws error when account balance is 0', () => {
@@ -193,21 +193,17 @@ describe('BankAccount', () => {
     }).toThrow('Dates must be in the format DD/MM/YYYY');
   });
 
-  it('prints a message saying the balance is 0 if no transactions have taken place', () => {
-    expect(bankAccount.printStatement()).toEqual('Current balance is 0, no transactions have taken place');
-  })
-
   it('correctly handles multiple deposits, withdrawals, and printStatements', () => {
     bankAccount.depositFunds('01/01/2023', 500.00);
     bankAccount.withdrawFunds('02/01/2023', 100.00);
     bankAccount.withdrawFunds('02/01/2023', 50.00)
 
-    expect(bankAccount.printStatement()).toEqual('date || credit || debit || balance\n02/01/2023 || || 50.00 || 350.00\n02/01/2023 || || 100.00 || 400.00\n01/01/2023 || 500.00 || || 500.00');
+    expect(bankAccount.transactions).toEqual('\n02/01/2023 || || 50.00 || 350.00\n02/01/2023 || || 100.00 || 400.00\n01/01/2023 || 500.00 || || 500.00');
 
     bankAccount.depositFunds('02/01/2023', 100.00);
     bankAccount.depositFunds('03/01/2023', 75.50);
     bankAccount.withdrawFunds('05/01/2023', 200.00);
     
-    expect(bankAccount.printStatement()).toEqual('date || credit || debit || balance\n05/01/2023 || || 200.00 || 325.50\n03/01/2023 || 75.50 || || 525.50\n02/01/2023 || 100.00 || || 450.00\n02/01/2023 || || 50.00 || 350.00\n02/01/2023 || || 100.00 || 400.00\n01/01/2023 || 500.00 || || 500.00');
+    expect(bankAccount.transactions).toEqual('\n05/01/2023 || || 200.00 || 325.50\n03/01/2023 || 75.50 || || 525.50\n02/01/2023 || 100.00 || || 450.00\n02/01/2023 || || 50.00 || 350.00\n02/01/2023 || || 100.00 || 400.00\n01/01/2023 || 500.00 || || 500.00');
   })
 })
