@@ -27,10 +27,6 @@ date || credit || debit || balance
 10/01/2023 || 1000.00 || || 1000.00
 ```
 
-## Approach taken to solve the problem
-
-I began by drafting a BankAccount class and breaking it down into three main functions - depositFunds, withdrawFunds and printStatement - given that these encapsulate the main functionality outlined in the  specification. I then brainstormed how these functions could interact with each other and the constructor function of the class. I incrementally built up a draft of each of these functions in the plan.md document of this repo. Once I had completed a reasonably detailed draft, I moved onto writing a list of things that I would need to check for when test-driving the class and its functions, including edge cases. Once I was satisfied with this list, I began TDDing the program. During the process of writing the program, I identified several areas which could be refactored into smaller private functions, for example, for ensuring that the argument 'amountDeposited' in the function 'depositFunds' is valid, a #checkAmountDepositedIsValid function was made.
-
 ## How to install the code
 1. If not already installed: Install Node Version Manager (NVM): ```brew install nvm```
 2. If not already installed: Install Node.js (version v19.4.0 at the time of writing): ```nvm install 19```
@@ -43,11 +39,12 @@ I began by drafting a BankAccount class and breaking it down into three main fun
 1. Enter the directory: ```cd bank-tech-test```.
 2. Run ```node```.
 3. Import the BankAccount class: ```const BankAccount = require('./bankAccount')```.
-4. Create an instance of the class, e.g.: ```const account = new BankAccount();```.
-5. Run any/all of the three public functions on the class instance: depositFunds, withdrawFunds, printStatement (details below):
+4. Import the BankStatement class: ```const BankStatement = require('./bankStatement')```
+5. Create an instance of the BankAccount class, e.g.: ```const account = new BankAccount();```.
+6. Run any/all of the three public functions on the BankAccount class instance: depositFunds, withdrawFunds, getStatement (details below):
 - depositFunds(date, amountDeposited), e.g.: ```account.depositFunds('01/01/2023', 100.00);```. Please note that: the date must be a string in the format DD/MM/YYYY; you cannot make the transaction date earlier than the preceding transaction date; and amountDeposited must be a positive number.
 - withdrawFunds(date, amountWithdrawn), e.g.: ```account.withdrawFunds('02/01/2023', 50.00);```. Again, please note that: the date must be a string in the format DD/MM/YYYY; you cannot make the transaction date earlier than the preceding transaction date; and amountWithdrawn must be a positive number.
-- printStatement(), e.g.: ```account.printStatement();```
+- getStatement(), e.g.: ```account.getStatement();``` - this creates a new instance of the BankStatement class, injecting the existing instance of the BankAccount class as a dependency.
 
 ## How to run tests on the code
 1. Run ```npx jest```.
@@ -61,5 +58,5 @@ Test coverage for the project is 100%.
 - A screenshot of a different series of input and output being run in Node
 ![another screenshot of the program running in Node](./screenshots/node-other-example-screenshot.png)
 
-- A screenshot of all 28 tests passing with 100% coverage
-![a screenshot of all 28 tests passing with 100% coverage](./screenshots/test-coverage-screenshot.png)
+- A screenshot of all 36 tests passing with 100% coverage
+![a screenshot of all 36 tests passing with 100% coverage](./screenshots/test-coverage-screenshot.png)
