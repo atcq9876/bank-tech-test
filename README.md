@@ -27,6 +27,9 @@ date || credit || debit || balance
 10/01/2023 || 1000.00 || || 1000.00
 ```
 
+## Structure and approach
+I employed a TDD and OOP approach for this challenge. I initially created one class to deal with all functionality of the program, but later chose to split this into two classes in order to make the code more maintainable, and testing more effective at identifying bugs. The first class, BankAccount, is responsible for handling all transactions (through two functions: depositFunds and WithdrawFunds) and storing transaction data (within this.transactions). The second class, BankStatement, is responsible for formatting transaction data into a bank statement and printing this.
+
 ## How to install the code
 1. If not already installed: Install Node Version Manager (NVM): ```brew install nvm```
 2. If not already installed: Install Node.js (version v19.4.0 at the time of writing): ```nvm install 19```
