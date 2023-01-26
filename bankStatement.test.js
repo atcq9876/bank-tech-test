@@ -10,7 +10,7 @@ describe('BankStatement', () => {
     bankAccount = new BankAccount();
   })
   
-  test('throws error if argument passed to BankStatement is not an instance of child BankAccount', () => {
+  test('throws error if argument passed to BankStatement is not a class instance with a transactions instance variable', () => {
     bankAccount.transactions = '\n01/01/2023 || 100.00 || || 100.00'
 
     expect(() => {
