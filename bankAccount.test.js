@@ -10,28 +10,28 @@ describe('BankAccount', () => {
     BankStatement.mockClear();
   })
   
-  it('prints a statement after one valid deposit', () => {
+  it('this.transactions is correct after one valid deposit', () => {
     bankAccount.depositFunds('01/01/2023', 100.00);
     
     expect(bankAccount.transactions)
       .toEqual('\n01/01/2023 || 100.00 || || 100.00');
   })
 
-  it('prints a statement after a different valid deposit', () => {
+  it('this.transactions is correct after a different valid deposit', () => {
     bankAccount.depositFunds('01/01/2023', 200.00);
     
     expect(bankAccount.transactions)
       .toEqual('\n01/01/2023 || 200.00 || || 200.00');
   })
 
-  it('prints a statement after another different valid deposit', () => {
+  it('this.transactions is correct after another different valid deposit', () => {
     bankAccount.depositFunds('01/01/2023', 250.00);
     
     expect(bankAccount.transactions)
       .toEqual('\n01/01/2023 || 250.00 || || 250.00');
   })
 
-  it('prints a statement after two valid deposits', () => {
+  it('this.transactions is correct after two valid deposits', () => {
     bankAccount.depositFunds('01/01/2023', 250.00);
     bankAccount.depositFunds('01/01/2023', 500.00);
     
@@ -39,7 +39,7 @@ describe('BankAccount', () => {
       .toEqual('\n01/01/2023 || 500.00 || || 750.00\n01/01/2023 || 250.00 || || 250.00');
   })
 
-  it('prints a statement after a valid deposit not on 01/01/2023', () => {
+  it('this.transactions is correct after a valid deposit not on 01/01/2023', () => {
     bankAccount.depositFunds('02/01/2023', 300.00);
 
     expect(bankAccount.transactions)
@@ -96,28 +96,28 @@ describe('BankAccount', () => {
     }).toThrow('Dates must be in the format DD/MM/YYYY');
   });
 
-  it('prints a statement after one valid withdrawal', () => {
+  it('this.transactions is correct after one valid withdrawal', () => {
     bankAccount.depositFunds('03/01/2023', 200.00);
     bankAccount.withdrawFunds('04/01/2023', 100.00);
 
     expect(bankAccount.transactions).toEqual('\n04/01/2023 || || 100.00 || 100.00\n03/01/2023 || 200.00 || || 200.00');
   })
 
-  it('prints a statement after a different valid withdrawal', () => {
+  it('this.transactions is correct after a different valid withdrawal', () => {
     bankAccount.depositFunds('03/01/2023', 200.00);
     bankAccount.withdrawFunds('04/01/2023', 150.00);
 
     expect(bankAccount.transactions).toEqual('\n04/01/2023 || || 150.00 || 50.00\n03/01/2023 || 200.00 || || 200.00');
   })
 
-  it('prints a statement after a different deposit and different withdrawal', () => {
+  it('this.transactions is correct after a different deposit and different withdrawal', () => {
     bankAccount.depositFunds('04/01/2023', 250.00);
     bankAccount.withdrawFunds('05/01/2023', 200.00);
 
     expect(bankAccount.transactions).toEqual('\n05/01/2023 || || 200.00 || 50.00\n04/01/2023 || 250.00 || || 250.00');
   })
 
-  it('prints a statement after a two valid withdrawals', () => {
+  it('this.transactions is correct after a two valid withdrawals', () => {
     bankAccount.depositFunds('03/01/2023', 200.00);
     bankAccount.withdrawFunds('04/01/2023', 50.00);
     bankAccount.withdrawFunds('05/01/2023', 100.00);
