@@ -117,7 +117,7 @@ describe('BankAccount', () => {
     expect(bankAccount.transactions).toEqual('\n05/01/2023 || || 200.00 || 50.00\n04/01/2023 || 250.00 || || 250.00');
   })
 
-  it('this.transactions is correct after a two valid withdrawals', () => {
+  it('this.transactions is correct after two valid withdrawals', () => {
     bankAccount.depositFunds('03/01/2023', 200.00);
     bankAccount.withdrawFunds('04/01/2023', 50.00);
     bankAccount.withdrawFunds('05/01/2023', 100.00);
