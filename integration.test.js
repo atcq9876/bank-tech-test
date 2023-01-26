@@ -10,7 +10,7 @@ describe('integration', () => {
     expect(bankAccount.getStatement()).toEqual('date || credit || debit || balance\n14/01/2023 || || 500.00 || 2500.00\n13/01/2023 || 2000.00 || || 3000.00\n10/01/2023 || 1000.00 || || 1000.00')
   })
 
-  it('processes deposits, withdrawals and prints statements (another example)', () => {
+  it('processes multiple deposits, withdrawals and prints multiple statements', () => {
     const bankAccount = new BankAccount();
     bankAccount.depositFunds('20/01/2023', 800.00);
     bankAccount.withdrawFunds('21/01/2023', 400.00);
