@@ -196,7 +196,7 @@ describe('BankAccount', () => {
     }).toThrow('Dates must be in the format DD/MM/YYYY');
   });
 
-  it('correctly handles multiple deposits, withdrawals, and printStatements', () => {
+  it('correctly handles multiple deposits and withdrawals', () => {
     bankAccount.depositFunds('01/01/2023', 500.00);
     bankAccount.withdrawFunds('02/01/2023', 100.00);
     bankAccount.withdrawFunds('02/01/2023', 50.00)
