@@ -1,4 +1,4 @@
-# bank-tech-test
+# Bank Tech Test
 
 ## About this project
 This is a tech-test assignment taken from week 10 of the Makers bootcamp. The program made allows a user to add deposit and withdrawal transactions to a bank account, and print a statement of all transactions from this account. The full specification of this project is outlined below:
@@ -27,6 +27,9 @@ date || credit || debit || balance
 10/01/2023 || 1000.00 || || 1000.00
 ```
 
+## Structure and approach
+I employed a TDD and OOP approach for this challenge. I initially created one class to deal with all functionality of the program, but later chose to split this into two classes in order to make the code more maintainable, and testing more effective at identifying bugs. The first class, BankAccount, is responsible for handling all transactions (through two functions: depositFunds and WithdrawFunds) and storing transaction data (within this.transactions). The second class, BankStatement, is responsible for formatting transaction data into a bank statement and printing this.
+
 ## How to install the code
 1. If not already installed: Install Node Version Manager (NVM): ```brew install nvm```
 2. If not already installed: Install Node.js (version v19.4.0 at the time of writing): ```nvm install 19```
@@ -51,12 +54,12 @@ date || credit || debit || balance
 2. For test coverage, run ```npx jest --coverage```.
 Test coverage for the project is 100%.
 
-# Screenshots
-- Screenshot of the program meeting the acceptance criteria in Node
+## Screenshots
+#### The program meeting the acceptance criteria in Node
 ![a screenshot of the program meeting the acceptance criteria in Node](./screenshots/node-acceptance-criteria-screenshot.png)
 
-- A screenshot of a different series of input and output being run in Node
+#### A different series of input and output being run in Node
 ![another screenshot of the program running in Node](./screenshots/node-other-example-screenshot.png)
 
-- A screenshot of all 36 tests passing with 100% coverage
+#### All 36 tests passing with 100% coverage
 ![a screenshot of all 36 tests passing with 100% coverage](./screenshots/test-coverage-screenshot.png)
