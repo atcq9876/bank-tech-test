@@ -1,4 +1,4 @@
-# bank-tech-test
+# Bank Tech Test
 
 ## About this project
 This is a tech-test assignment taken from week 10 of the Makers bootcamp. The program made allows a user to add deposit and withdrawal transactions to a bank account, and print a statement of all transactions from this account. The full specification of this project is outlined below:
@@ -54,12 +54,12 @@ I employed a TDD and OOP approach for this challenge. I initially created one cl
 2. For test coverage, run ```npx jest --coverage```.
 Test coverage for the project is 100%.
 
-# Screenshots
-- Screenshot of the program meeting the acceptance criteria in Node
+## Screenshots
+#### The program meeting the acceptance criteria in Node
 ![a screenshot of the program meeting the acceptance criteria in Node](./screenshots/node-acceptance-criteria-screenshot.png)
 
-- A screenshot of a different series of input and output being run in Node
+#### A different series of input and output being run in Node
 ![another screenshot of the program running in Node](./screenshots/node-other-example-screenshot.png)
 
-- A screenshot of all 36 tests passing with 100% coverage
+#### All 36 tests passing with 100% coverage
 ![a screenshot of all 36 tests passing with 100% coverage](./screenshots/test-coverage-screenshot.png)
