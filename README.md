@@ -35,7 +35,7 @@ I employed a TDD and OOP approach for this challenge. I initially created one cl
 2. If not already installed: Install Node.js (version v19.4.0 at the time of writing): ```nvm install 19```
 3. Clone the repository to your device
 2. Enter the directory: ```cd bank-tech-test```
-3. Activate node: ```nvm use node```
+3. Activate Node: ```nvm use node```
 4. Run ```npm install```
 
 ## How to run the code
